@@ -1,7 +1,4 @@
-#from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render
 
-
-
-def index(request):
-    return HttpResponse("hai ambui")
+def dashboard(request):
+    return render(request, 'dashboard.html')
