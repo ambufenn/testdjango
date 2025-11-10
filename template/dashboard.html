@@ -1,0 +1,160 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FairCare Pulse - Dashboard Pasien</title>
+
+    <!-- Tailwind & Feather Icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    primary: '#1a936f',
+                    secondary: '#88d498',
+                    accent: '#114b5f'
+                }
+            }
+        }
+    }
+    </script>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Custom Navbar -->
+    <custom-navbar></custom-navbar>
+
+    <main class="container mx-auto px-4 py-6">
+        <!-- Header Section -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+            <div>
+                <h1 class="text-2xl md:text-3xl font-bold text-primary">
+                    Selamat Datang, <span class="text-accent">Budi Santoso</span>
+                </h1>
+                <p class="text-gray-600">No. Peserta: 000123456789</p>
+            </div>
+            <div class="mt-4 md:mt-0 bg-white p-4 rounded-lg shadow-sm border border-green-100">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                        <i data-feather="shield" class="text-primary"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500">Indeks Keadilan</p>
+                        <h3 class="text-xl font-bold text-primary">89/100</h3>
+                        <p class="text-xs text-green-600">Akses Anda: Sehat & Transparan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <a href="#" class="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-all border border-gray-100">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center mr-3 text-primary">
+                        <i data-feather="list"></i>
+                    </div>
+                    <h3 class="font-medium">Lihat Riwayat Layanan</h3>
+                </div>
+            </a>
+            <a href="#" class="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-all border border-gray-100">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center mr-3 text-blue-500">
+                        <i data-feather="bar-chart-2"></i>
+                    </div>
+                    <h3 class="font-medium">Bandingkan Tarif & Tindakan</h3>
+                </div>
+            </a>
+            <a href="#" class="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-all border border-gray-100">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-yellow-50 flex items-center justify-center mr-3 text-yellow-500">
+                        <i data-feather="alert-circle"></i>
+                    </div>
+                    <h3 class="font-medium">Kirim Masukan/Sanggahan</h3>
+                </div>
+            </a>
+            <a href="#" class="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-all border border-gray-100">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center mr-3 text-purple-500">
+                        <i data-feather="message-square"></i>
+                    </div>
+                    <h3 class="font-medium">Chatbot Bantuan</h3>
+                </div>
+            </a>
+        </div>
+
+        <!-- AI Transparency Card -->
+        <div class="bg-white p-5 rounded-lg shadow-sm border-l-4 border-green-400 mb-8">
+            <div class="flex items-start">
+                <div class="mr-4 text-green-500">
+                    <i data-feather="check-circle" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-1 text-primary">Transparansi AI</h3>
+                    <p class="text-gray-700 mb-3">Sistem tidak menemukan kejanggalan dalam layanan terakhir Anda. Semua data sesuai dengan standar JKN.</p>
+                    <button class="text-sm text-primary hover:underline">Pelajari lebih lanjut</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Last Visits -->
+        <div class="bg-white rounded-lg shadow-sm overflow-hidden mb-8">
+            <div class="p-5 border-b border-gray-100">
+                <h2 class="font-bold text-lg text-gray-800">3 Kunjungan Terakhir</h2>
+            </div>
+            <div class="divide-y divide-gray-100">
+                <div class="p-5 hover:bg-gray-50 transition-colors">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h3 class="font-medium">RS Mitra Sehat</h3>
+                            <p class="text-sm text-gray-500">15 Mei 2023 • Pemeriksaan Umum</p>
+                        </div>
+                        <span class="px-3 py-1 rounded-full text-xs bg-green-100 text-green-800">Terverifikasi</span>
+                    </div>
+                </div>
+                <div class="p-5 hover:bg-gray-50 transition-colors">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h3 class="font-medium">Klinik Sejahtera</h3>
+                            <p class="text-sm text-gray-500">2 April 2023 • Konsultasi Spesialis</p>
+                        </div>
+                        <span class="px-3 py-1 rounded-full text-xs bg-blue-100 text-blue-800">Dalam Review</span>
+                    </div>
+                </div>
+                <div class="p-5 hover:bg-gray-50 transition-colors">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h3 class="font-medium">RS Cinta Kasih</h3>
+                            <p class="text-sm text-gray-500">10 Maret 2023 • Rawat Inap</p>
+                        </div>
+                        <span class="px-3 py-1 rounded-full text-xs bg-yellow-100 text-yellow-800">Catatan Ditambahkan</span>
+                    </div>
+                </div>
+            </div>
+            <div class="p-5 border-t border-gray-100 text-center">
+                <a href="#" class="text-primary hover:underline">Lihat Semua Riwayat</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Custom Footer -->
+    <custom-footer></custom-footer>
+
+    <!-- Local JS -->
+    <script src="{% static 'components/navbar.js' %}"></script>
+    <script src="{% static 'components/footer.js' %}"></script>
+    <script src="{% static 'script.js' %}"></script>
+
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
